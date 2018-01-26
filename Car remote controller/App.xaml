@@ -1,0 +1,7 @@
+﻿<Application
+    x:Class="Car_remote_controller.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Car_remote_controller">
+
+</Application>

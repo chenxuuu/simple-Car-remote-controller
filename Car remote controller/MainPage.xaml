@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="Car_remote_controller.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Car_remote_controller"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Slider Name="LeftSlider" 
+                Margin="10,10,10,10"
+                Minimum="-100" 
+                Maximum="100" 
+                HorizontalAlignment="Stretch"
+                TickPlacement="Outside"
+                TickFrequency="1"
+                ValueChanged="LeftSlider_ValueChanged"
+                Grid.Row="0" 
+                Grid.ColumnSpan="3"
+                />
+        <Slider Name="RightSlider" 
+                Margin="0,10,0,10" 
+                Orientation="Vertical" 
+                Minimum="-100" 
+                Maximum="100" 
+                HorizontalAlignment="Center"
+                TickPlacement="Outside"
+                TickFrequency="1"
+                Grid.Column="2"
+                ValueChanged="RightSlider_ValueChanged"
+                Grid.Row="1"
+                />
+        <Button Name="StopButton" 
+                Content="Stop" 
+                Margin="10"
+                Grid.Column="1" 
+                Grid.Row="1"
+                Click="StopButton_Click" HorizontalAlignment="Center"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Grid.ColumnSpan="3" >
+            <TextBlock Text="ip:"/>
+            <TextBox Name="IPTextBox" Text="192.168.12.1"/>
+            <TextBlock Text="port:"/>
+            <TextBox Name="PortTextBox" Text="12345"/>
+        </StackPanel>
+    </Grid>
+</Page>
